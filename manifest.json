@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "version": "8.0.0-pre",
+  "homepage_url": "https://github.com/jperryhouts/send-later/",
+  "icons": {
+    "48": "icons/icon.png"
+  },
+
+  "permissions": ["storage","accountsRead","accountsFolders"],
+
+  "background": {
+    "scripts": ["/options/migratePrefs.js","/background.js"]
+  },
+
+  "options_ui": {
+    "page": "/options/options.html",
+    "open_in_tab": false,
+    "browser_style": false
+  },
+
+  "default_locale": "en",
+
+  "experiment_apis": {
+    "legacyPrefs": {
+      "schema": "experiments/legacyPrefs.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "paths": [["legacyPrefs"]],
+        "script": "experiments/legacyPrefs.js"
+      }
+    }
+  }
+}

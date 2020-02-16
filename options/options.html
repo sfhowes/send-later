@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/options/options.css"/>
+  </head>
+
+  <body>
+    <section style="margin-top:0px;">
+      <div class="title option-label" id="generalOptionsTitle">General Options</div>
+      <label>
+        <span class="option-label" id="checkTimePrefLabel1">Check every</span>
+        <input type="number" min=1 id="checktimepref" style="width:6em;" class="preference"/>
+        <span class="option-label" id="checkTimePrefLabel2">minutes</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="send_does_delay" class="preference"/>
+        <span class="option-label" id="sendDelayPrefLabel1">&quot;Send&quot; delays messages by</span>
+        <input type="number" min=1 style="width:6em;" id="send_delay" class="preference"/>
+        <span class="option-label" id="sendDelayPrefLabel2">minutes</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="sendbutton" class="preference"/>
+        <span class="option-label" id="sendButtonPrefLabel">&quot;Send&quot; does &quot;Send later&quot;</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="alt_binding" class="preference"/>
+        <span class="option-label" id="altBindingPrefLabel">Bind Alt-Shift-Enter instead of Ctrl-Shift-Enter</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="mark_drafts_read" class="preference"/>
+        <span class="option-label" id="markReadPrefLabel">Mark scheduled drafts as read</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="showcolumn" class="preference"/>
+        <span class="option-label" id="showColumnPrefLabel">Show Send Later column</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="showheader" class="preference"/>
+        <span class="option-label" id="showHeaderPrefLabel">Show Send Later header</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="showstatus" class="preference"/>
+        <span class="option-label" id="showStatusPrefLabel">Show Send Later in status bar</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="sendunsentmessages" class="preference"/>
+        <span class="option-label" id="sendUnsentMessagesPrefLabel">Trigger unsent message delivery from outbox</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="block_late_messages" class="preference"/>
+        <span class="option-label" id="blockLateMessagesPrefLabel1">Don't deliver messages more than</span>
+        <input type="number" min=1 style="width:6em;" id="late_grace_period" class="preference"/>
+        <span class="option-label" id="blockLateMessagesPrefLabel2">minutes late</span>
+      </label>
+
+      <label>
+        <input type="checkbox" id="enforce_restrictions" class="preference"/>
+        <span class="option-label" id="enforceRestrictionsPrefLabel">Enforce time and day restrictions at delivery time</span>
+      </label>
+    </section>
+
+    <section>
+      <div class="title option-label" id="shortcutOptionsTitle">Shortcuts</div>
+      <label>
+        <span class="option-label" id="quickOptionLabel1Label">Shortcut 1 label</span>:
+        <input type="text" id="quickoptions.1.label" style="width:6em;" class="preference"/>
+        <span class="option-label" id="quickOptionValue1Label">Minutes</span>:
+        <input type="text" id="quickoptions.1.valuestring" style="width:6em;" class="preference"/>
+      </label>
+
+      <label>
+        <span class="option-label" id="quickOptionLabel2Label">Shortcut 2 label</span>:
+        <input type="text" id="quickoptions.2.label" style="width:6em;" class="preference"/>
+        <span class="option-label" id="quickOptionValue2Label">Minutes</span>:
+        <input type="text" id="quickoptions.2.valuestring" style="width:6em;" class="preference"/>
+      </label>
+
+      <label>
+        <span class="option-label" id="quickOptionLabel3Label">Shortcut 3 label</span>:
+        <input type="text" id="quickoptions.3.label" style="width:6em;" class="preference"/>
+        <span class="option-label" id="quickOptionValue3Label">Minutes</span>:
+        <input type="text" id="quickoptions.3.valuestring" style="width:6em;" class="preference"/>
+      </label>
+    </section>
+
+    <section>
+      <div class="title option-label" id="advancedOptionsTitle">Advanced</div>
+      <label>
+        <span class="option-label" id="logLevelLabel">Log level</span>:
+        <select id="logging.dump" class="preference">
+          <option value="fatal" class="option-label" id="logLevelFatal">Fatal</option>
+          <option value="error" class="option-label" id="logLevelError">Error</option>
+          <option value="warn" class="option-label" id="logLevelWarn">Warn</option>
+          <option value="info" class="option-label" id="logLevelInfo">Info</option>
+          <option value="debug" class="option-label" id="logLevelDebug">Debug</option>
+          <option value="trace" class="option-label" id="logLevelTrace">Trace</option>
+          <option value="all" class="option-label" id="logLevelAll">All</option>
+        </select>
+      </label>
+
+      <label for="consolelog_menu">
+        <span class="option-label" id="consoleLogLevelLabel">Console log level</span>:
+        <select id="logging.console" class="preference">
+          <option value="fatal" class="option-label" id="logLevelFatal">Fatal</option>
+          <option value="error" class="option-label" id="logLevelError">Error</option>
+          <option value="warn" class="option-label" id="logLevelWarn">Warn</option>
+          <option value="info" class="option-label" id="logLevelInfo">Info</option>
+          <option value="debug" class="option-label" id="logLevelDebug">Debug</option>
+          <option value="trace" class="option-label" id="logLevelTrace">Trace</option>
+          <option value="all" class="option-label" id="logLevelAll">All</option>
+        </select>
+      </label>
+    </section>
+
+    <hr/>
+    <input type="button" value="Reset" id="reset-button"/></input>
+    <input type="button" value="Save" id="save-button"/></input>
+
+    <div class="footer">
+      <a href="example.com" class="option-label" id="contactAuthor">Contact Author</a>
+      <a href="example.com" class="option-label" id="userGuide">User Guide</a>
+    </div>
+
+    <script src="/options/options.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,25 @@
+[
+  {
+    "namespace": "legacyPrefs",
+    "functions": [
+      {
+        "name": "getPref",
+        "type": "function",
+        "description": "Gets a preference.",
+        "async": true,
+        "parameters": [
+          {
+            "name": "name",
+            "type": "string",
+            "description": "The preference name"
+          },
+          {
+            "name": "dtype",
+            "type": "string",
+            "description": "Data type of the preference"
+          }
+        ]
+      }
+    ]
+  }
+]
