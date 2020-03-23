@@ -7,17 +7,49 @@
   "icons": {
     "48": "icons/icon.png"
   },
-
-  "permissions": ["storage","accountsRead","accountsFolders"],
+  "applications": {
+      "gecko": {
+          "id": "sendlater@inverted.earth",
+          "strict_min_version": "74.0b1"
+      }
+  },
+  "permissions": [
+    "storage",
+    "accountsRead",
+    "accountsFolders",
+    "menus",
+    "menus.overrideContext",
+    "activeTab",
+    "messagesMove",
+    "messagesRead",
+    "compose"
+  ],
 
   "background": {
-    "scripts": ["/options/migratePrefs.js","/background.js"]
+    "scripts": ["/utils/util.js","/options/migratePrefs.js","/background.js"]
   },
 
   "options_ui": {
     "page": "/options/options.html",
     "open_in_tab": false,
     "browser_style": false
+  },
+
+  "commands": {
+    "do-send-later": {
+      "suggested_key": {
+        "default": "Alt+Shift+S"
+      },
+      "description": "Execute the Send Later plugin"
+    }
+  },
+
+  "compose_action": {
+    "browser_style": true,
+    "default_area": "maintoolbar",
+    "default_icon": "/icons/icon.png",
+    "default_popup": "/dialogs/popup.html",
+    "default_title": "SendLater"
   },
 
   "default_locale": "en",
@@ -29,6 +61,14 @@
         "scopes": ["addon_parent"],
         "paths": [["legacyPrefs"]],
         "script": "experiments/legacyPrefs.js"
+      }
+    },
+    "sendLater": {
+      "schema": "experiments/sendLater.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "paths": [["sendLater"]],
+        "script": "experiments/sendLater.js"
       }
     }
   }
